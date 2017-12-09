@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WifiMap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/style2.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="container my-container">
+      <div class="jumbotron myjumbotron" id="jumbo">
+        <div id="content-start-slide">
+          <h1>Are you a Dr. House Fan?</h1>
+          <button type="button" class="btn btn-success btn-lg mybutton start-quiz" onclick="Question1()">Start Quiz</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!--Questions-->
+<!--Q1-->
+    <div class="content questions question1" id="content-question1">
+        <h2>How many seasons does Dr. House series have?</h2><br>
+        <input type="number" id="answer-question1" placeholder="Enter a number" min="1">
+        <button type="button" class="btn btn-success btn-lg mybutton next" onclick="Question2()">Next</button>
+    </div>
+<!--Q2-->
+    <div class="content questions question2" id="content-question2">
+        <h2>Select a picture of Dr.House</h2>
+        <div class="allimage-wrapper">
+          <div class="image-wrapper">
+            <span class="image1" id="img1">
+              <img class="cameron" src="./images/resized_cameron.jpg"/>
+              <input type="checkbox" id="answer-question2-1" onchange="block1()" min="1">
+            </span>
+          </div>
+          <div class="image-wrapper">
+            <span class="image2" id="img2">
+              <img class="kitten" src="./images/resized_kitten.jpg"/>
+              <input type="checkbox" id="answer-question2-2" onchange="block2()" min="1">
+            </span>
+          </div>
+          <div class="image-wrapper">
+            <span class="image3" id="img3">
+              <img class="drhouse" src="./images/resized_drhouse.jpg"/>
+              <input type="checkbox" id="answer-question2-3" onchange="block3()" min="1">
+            </span>
+          </div>
+        </div><br><br><br>
+        <!--<input type="number" id="answer-question2" placeholder="Enter a number" min="1">-->
+        <button type="button" class="btn btn-success btn-lg mybutton next" onclick="Question3()">Next</button>
+    </div>
+<!--Q3-->
+    <div class="content questions question3" id="content-question3">
+        <h2>What is the first name of Dr.House</h2><br>
+        <input type="text" id="answer-question3" placeholder="Enter a name" min="1">
+        <button type="button" class="btn btn-success btn-lg mybutton next" onclick="Question4()">Next</button>
+    </div>
+<!--Q4-->
+    <div class="content questions question4" id="content-question4">
+        <h2>Why does Dr.House limp?</h2><br>
+
+        <form id="input-area">
+          <input id="red" type="radio" class="answers-q4" name="answer4" value=0> He was born like that<br>
+          <input id="blue" type="radio" class="answers-q4" name="answer4" value=5> He had aneurysm in his thigh<br>
+          <input id="green" type="radio" class="answers-q4" name="answer4" value=0> He tripped over a drunk person<br>
+          <input id="salmon" type="radio" class="answers-q4" name="answer4" value=0> He had a car accident<br><br>
+        </form>
+
+        <button type="button" class="btn btn-success btn-lg mybutton next" onclick="Question5()">Next</button>
+    </div>
+<!--Q5-->
+    <div class="content questions question5" id="content-question5">
+        <h2>On scale from 1 to 10 how big a jerk Dr.House is?</h2><br>
+        <div id="slidecontainer">
+            <span id="min"><b>1  </b></span><input type="range" min="1" max="10" value="6" class="slider" id="myRange" oninput="slideTt()"><span id="max"><b>  10</b></span>
+            <p id="current-slider-value">The current value is 6</p>
+        </div>
+        <button type="button" class="btn btn-success btn-lg mybutton next" onclick="QuestionEnd()">Result</button>
+    </div>
+<!--Result-->
+    <div class="content questions result" id="content-result">
+
+          <h2 id="result-line">...</h2><br>
+          <img src="./images/giphy.gif">
+
+    </div>
+
+    <script src="./js/script2.js"></script>
+</body>
+</html>
